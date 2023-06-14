@@ -22,11 +22,7 @@ function Header() {
     return (
         <div className={cx(styles.wrapper)}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    {/* <img src="../../../../assets/images/tiktokLogo.png" />
-                    day la anh */}
-                    {/* <img src={images.logo} alt="tiktok" /> */}
-                </div>
+                <div className={cx('logo')}></div>
                 <Tippy
                     interactive
                     visible={searchResult.length > 0}
@@ -34,8 +30,8 @@ function Header() {
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
+                                <AccountItem />
                             </PopperWrapper>
-                            <AccountItem />
                         </div>
                     )}
                 >
