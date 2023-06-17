@@ -6,11 +6,14 @@ import styles from './AccountItem.module.scss';
 const cx = classNames.bind(styles);
 
 function AccountItem() {
+
+    const imagePath = require('../../assets/images/image-69-hinh-anh-gai-xinh-trung-quoc-hot-girl-trung-quoc-dep-nhat-2022-166432725338362.jpg')
+
     return (
         <div className={cx('wrapper')}>
             <img
                 className={cx('avatar')}
-                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/fc2bc3aac0a8e64d25ad762af3baae8f.jpeg?x-expires=1686758400&x-signature=1ZWnZlRRAhUA%2FBozqfTQNOtIc6c%3D"
+                src={imagePath}
                 alt="Hoaa"
             />
             <div className={cx('info')}>

@@ -31,6 +31,10 @@ function Header() {
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <AccountItem />
+                                <div className={cx('more-result')}>Xem tất cả kết quả cho " "</div>
                             </PopperWrapper>
                         </div>
                     )}
