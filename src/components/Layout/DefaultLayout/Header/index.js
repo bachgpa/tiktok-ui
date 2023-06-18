@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
-import { useEffect, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 
 import 'tippy.js/dist/tippy.css';
 import styles from './Header.module.scss';
@@ -29,7 +29,6 @@ function Header() {
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>
-                                
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
                                 <AccountItem />
