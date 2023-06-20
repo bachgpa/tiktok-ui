@@ -1,9 +1,15 @@
+import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faPlus, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleXmark,
+    faMagnifyingGlass,
+    faPlus,
+    faSpinner,
+} from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
-import { Children, useEffect, useState } from 'react';
 
+import Button from '../../../Button';
 import 'tippy.js/dist/tippy.css';
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '../../../Popper';
@@ -27,14 +33,20 @@ function Header() {
                     interactive
                     visible={searchResult.length > 0}
                     render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <div
+                            className={cx('search-result')}
+                            tabIndex="-1"
+                            {...attrs}
+                        >
                             <PopperWrapper>
                                 <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
-                                <div className={cx('more-result')}>Xem tất cả kết quả cho " "</div>
+                                <div className={cx('more-result')}>
+                                    Xem tất cả kết quả cho " "
+                                </div>
                             </PopperWrapper>
                         </div>
                     )}
@@ -44,7 +56,10 @@ function Header() {
                         <button className={cx('delete')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
+                        <FontAwesomeIcon
+                            className={cx('loading')}
+                            icon={faSpinner}
+                        />
 
                         <button className={cx('search-btn')}>
                             <FontAwesomeIcon icon={faMagnifyingGlass} />{' '}
@@ -52,11 +67,11 @@ function Header() {
                     </div>
                 </Tippy>
                 <div className={cx('action')}>
-                    <div className={cx('upload')}>
+                    {/* <div className={cx('upload')}>
                         <FontAwesomeIcon icon={faPlus} />
                         <p>Tải lên</p>
-                    </div>
-                    <button className={cx('login')}>Đăng nhập</button>
+                    </div> */}
+                    <Button outline>Login</Button>
                 </div>
             </div>
         </div>
