@@ -1,4 +1,7 @@
 .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-width: 100px;
     padding: 9px 16px;
     border-radius: 4px;
@@ -8,16 +11,28 @@
     cursor: pointer;
     border: 1px solid transparent;
     background-color: #fff;
+    height: 36px;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 16px;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        background-color: rgba(254, 44, 85, 0.06);
+    }
 }
 .primary {
     background-color: #fe2c55;
     &:hover {
         background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.06),
-            rgba(0, 0, 0, 0.06),
-            #fe2c55
-        );
+                0deg,
+                rgba(0, 0, 0, 0.06),
+                rgba(0, 0, 0, 0.06)
+            ),
+            #fe2c55;
     }
 }
 .outline {
@@ -25,6 +40,36 @@
     border: 1px solid #fe2c55;
     &:hover {
         background-color: rgba(254, 44, 85, 0.06);
+    }
+}
+
+.rounded {
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    background: none rgb(255, 255, 255);
+    outline: none;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC,
+        sans-serif;
+    font-size: 14px;
+    height: 32px;
+    transform: none;
+    font-weight: 700;
+    position: relative;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px 8px;
+    min-width: 90px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.3s cubic-bezier(0.4, 0.14, 0.3, 1) 0s;
+    transform-origin: right bottom;
+    border-radius: 52px;
+    line-height: 30px;
+    cursor: pointer;
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -36,4 +81,20 @@
     padding: 9px 16px;
 }
 .large {
+    padding: 12px 24px;
+}
+.text {
+    // tại sao padding ở đay lại làm lệch phần text lên?
+    // padding: 4px 16px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+    color: rgb(22, 24, 35);
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
 }
