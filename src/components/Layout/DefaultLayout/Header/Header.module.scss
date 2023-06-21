@@ -36,6 +36,7 @@
     }
 }
 
+.Tippy,
 .search-result {
     width: 100%;
     max-width: 498px;
@@ -63,11 +64,9 @@
     color: rgba(22, 24, 35, 1);
     font-weight: 600;
 }
-.tippy {
-    width: 50%;
-}
 .search {
-    --search-width: 50%;
+    box-sizing: border-box;
+    --search-width: 100%;
     width: var(--search-width);
     min-width: 250px;
     max-width: 498px;
@@ -161,6 +160,7 @@ input:not(:placeholder-shown) ~ .search-btn {
 }
 .action {
     display: inline-flex;
+    margin: 0 16px;
 
     .upload {
         display: inline-flex;
